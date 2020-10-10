@@ -15,6 +15,14 @@ White='\033[0;37m'
 #
 cd ./target
 printf "${Red}1.Clean\n"
+if [ -d "commons" ] 
+then
+    rm -fr commons;
+fi
+if [ -f "commons.jar" ] 
+then
+    rm -fr commons.jar;
+fi
 
 if [ -d "com" ] 
 then
@@ -27,13 +35,14 @@ fi
 
 cd ../src/main/java/com/miro
 printf "${Red}2.Compile\n"
-javac -d ../../../../../target *.java ./domain/*.java
+javac -d ../../../../../target *.java ./domain/*.java 
 
 cd ../../../../../target
+#cp -R ../libs/commons-lang3-3.11/org .
 printf "${Red}3.Package\n"
-jar -cvfm com.jar MANIFEST.MF com
+#jar -cvf commons.jar org
+jar -cvfm com.jar MANIFEST.MF com 
 
 printf "${Green}4.Execute\n"
 printf "${White}\n"
 java -jar com.jar
-
