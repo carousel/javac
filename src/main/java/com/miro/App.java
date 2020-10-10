@@ -1,16 +1,21 @@
 package com.miro;
 
-import org.apache.commons.lang3.StringUtils;
 import com.miro.domain.Money;
 import java.math.BigDecimal;
+import org.apache.commons.lang3.*;
 
 class App {
+    String str;
     public static void main (String... args)
     {
-        BigDecimal amount = new BigDecimal(12.46);
+        String str = "123";
+        BigDecimal amount = new BigDecimal(14.372);
         Money money = Money.create(amount);
         System.out.println("Balance: " + money.balance());
         System.out.println(StringUtils.equals("hello","hello"));
+        System.out.println("hello hello hello finally");
+        System.out.println(Integer.valueOf(str));
+        System.out.println(Integer.parseInt(str));
     }
         
 }

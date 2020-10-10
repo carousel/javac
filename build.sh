@@ -14,17 +14,18 @@ White='\033[0;37m'
 #Light Gray   0;37     White         1;37
 #
 printf "${White}------------------------------------------------------------------------------------------------------------------------------\n"
-cd ./target
-printf "${Blue}1.Clean\n"
-if [ -d "commons" ] 
+if [ -d "target" ] 
 then
-    rm -fr commons;
-fi
-if [ -f "commons.jar" ] 
-then
-    rm -fr commons.jar;
+    cd ./target
+else
+    mkdir target
+    cd ./target; touch MANIFEST.MF;
+    echo "Manifest-Version: 1.0" >> MANIFEST.MF
+    echo "Main-Class: com.miro.App" >> MANIFEST.MF
+    echo "Class-Path: ../lib/commons-lang3-3.11/commons-lang3-3.11.jar" >> MANIFEST.MF
 fi
 
+printf "${Blue}1.Clean\n"
 if [ -d "com" ] 
 then
     rm -fr com;
@@ -37,9 +38,7 @@ fi
 printf "${Red}2.Compile\n"
 javac -d . -cp ../lib/commons-lang3-3.11/commons-lang3-3.11.jar ../src/main/java/com/miro/App.java ../src/main/java/com/miro/domain/Money.java
 
-#cp -R ../libs/commons-lang3-3.11/org .
 printf "${Red}3.Package\n"
-#jar -cvf commons.jar org
 jar -cvfm com.jar MANIFEST.MF com
 
 printf "${Green}4.Execute\n"
