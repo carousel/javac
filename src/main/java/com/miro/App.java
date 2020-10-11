@@ -14,10 +14,10 @@ class App {
         System.out.println("Balance: " + money.balance());
         StringBuilder sb = new StringBuilder();
         sb.append(sb)
-            .append(" One")
-            .append(" Two")
-            .append(" Three")
-            .append(" Four");
+            .append("One\n")
+            .append("\tTwo\n")
+            .append("\t\tThree\n")
+            .append("\t\t\tFour");
         System.out.println(sb);
     }
         
