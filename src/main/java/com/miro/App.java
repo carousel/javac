@@ -12,10 +12,13 @@ class App {
         BigDecimal amount = new BigDecimal(14.372);
         Money money = Money.create(amount);
         System.out.println("Balance: " + money.balance());
-        System.out.println(StringUtils.equals("hello","hello"));
-        System.out.println("hello hello hello finally");
-        System.out.println(Integer.valueOf(str));
-        System.out.println(Integer.parseInt(str));
+        StringBuilder sb = new StringBuilder();
+        sb.append(sb)
+            .append(" One")
+            .append(" Two")
+            .append(" Three")
+            .append(" Four");
+        System.out.println(sb);
     }
         
 }
