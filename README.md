@@ -1,3 +1,3 @@
 # Money pattern
-    Java project from scratch. Mmanually compiling and building everything. No build tools. 
+    Java project from scratch. Manually compiling and building everything. No build tools. Good old javac 
 
