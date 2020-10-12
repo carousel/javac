@@ -9,16 +9,15 @@ class App {
     public static void main (String... args)
     {
         String str = "123";
-        BigDecimal amount = new BigDecimal(14.372);
-        Money money = Money.create(amount);
-        System.out.println("Balance: " + money.balance());
-        StringBuilder sb = new StringBuilder();
-        sb.append(sb)
-            .append("One")
-            .append(" Two")
-            .append(" Three")
-            .append(" Four");
-        System.out.println(sb);
+        BigDecimal amount = new BigDecimal(10);
+        BigDecimal amount1 = new BigDecimal(17);
+        Money money = Money.fromAmount(amount);
+        BigDecimal balance = Money
+                                .add(money)
+                                .add(money)
+                                .balance();
+        //System.out.println(balance);
+        System.out.println(Money.sub(amount1).balance());
     }
         
 }
