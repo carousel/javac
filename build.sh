@@ -1,4 +1,11 @@
 #! /usr/bin/zsh
+SRCPATH='../src/main/java/com/miro/'
+#Dependencies
+Commons='../lib/commons-lang3-3.11/commons-lang3-3.11.jar'
+App=${SRCPATH}'App.java'
+Money=${SRCPATH}'domain/Money.java'
+Account=${SRCPATH}'domain/Account.java'
+Currency=${SRCPATH}'domain/Currency.java'
 
 Red='\033[0;31m'
 Green='\033[0;32m'
@@ -36,7 +43,7 @@ then
 fi
 
 printf "${Red}2.Compile\n"
-javac -d . -cp ../lib/commons-lang3-3.11/commons-lang3-3.11.jar ../src/main/java/com/miro/App.java ../src/main/java/com/miro/domain/Money.java
+javac -d . -cp ${Commons} ${App} ${Money} ${Account} ${Currency}
 
 printf "${Red}3.Package\n"
 jar -cvfm com.jar MANIFEST.MF com
