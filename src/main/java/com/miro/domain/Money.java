@@ -23,13 +23,13 @@ public class Money {
     public BigDecimal balance(){
         return amount.setScale(2, roundingMode);
     }
-    public static Money add(Money money){
-        return Money.create(money.balance().add(balance));
+    public Money add(Money money){
+        return Money.create(balance().add(money.balance()));
     }
-    public static Money sub(BigDecimal amount){
-        if(balance.compareTo(amount) == -1){
+    public Money sub(Money money){
+        if(balance().compareTo(money.balance()) == -1){
             throw new RuntimeException("Out of balance");
         }
-        return Money.create(balance.subtract(amount));
+        return Money.create(balance().subtract(money.balance()));
     }
 }

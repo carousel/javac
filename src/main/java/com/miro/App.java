@@ -8,16 +8,14 @@ class App {
     String str;
     public static void main (String... args)
     {
-        String str = "123";
         BigDecimal amount = new BigDecimal(10);
         BigDecimal amount1 = new BigDecimal(17);
         Money money = Money.fromAmount(amount);
-        BigDecimal balance = Money
-                                .add(money)
-                                .add(money)
-                                .balance();
-        //System.out.println(balance);
-        System.out.println(Money.sub(amount1).balance());
+        Money money1 = Money.fromAmount(amount1);
+        Money newMoney = Money.fromAmount(money1.sub(money).balance());
+        System.out.println("Add: " + money.add(money1).balance());
+        System.out.println("Subtract: " + newMoney.balance());
+        System.out.println("Add back: " + money.add(newMoney).add(money).balance());
     }
         
 }
