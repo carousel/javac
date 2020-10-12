@@ -2,6 +2,7 @@
 SRCPATH='../src/main/java/com/miro/'
 #Dependencies
 Commons='../lib/commons-lang3-3.11/commons-lang3-3.11.jar'
+#Source classes
 App=${SRCPATH}'App.java'
 Money=${SRCPATH}'domain/Money.java'
 Account=${SRCPATH}'domain/Account.java'
@@ -23,9 +24,16 @@ White='\033[0;37m'
 printf "${White}------------------------------------------------------------------------------------------------------------------------------\n"
 if [ -d "target" ] 
 then
-    cd ./target
+    rm -fr target
+    mkdir target
+    chmod 700 target
+    cd ./target; touch MANIFEST.MF;
+    echo "Manifest-Version: 1.0" >> MANIFEST.MF
+    echo "Main-Class: com.miro.App" >> MANIFEST.MF
+    echo "Class-Path: ../lib/commons-lang3-3.11/commons-lang3-3.11.jar" >> MANIFEST.MF
 else
     mkdir target
+    chmod 700 target
     cd ./target; touch MANIFEST.MF;
     echo "Manifest-Version: 1.0" >> MANIFEST.MF
     echo "Main-Class: com.miro.App" >> MANIFEST.MF
