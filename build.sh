@@ -11,18 +11,18 @@ then
     touch ${BUILDPATH}/MANIFEST.MF;
     echo "Manifest-Version: 1.0" >> ${BUILDPATH}/MANIFEST.MF;
     echo "Main-Class: com.miro.App" >> ${BUILDPATH}/MANIFEST.MF;
-    echo "Class-Path: ../lib/commons-lang3-3.11/commons-lang3-3.11.jar" >> ${BUILDPATH}/MANIFEST.MF;
+    echo "Class-Path: ../${Commons}" >> ${BUILDPATH}/MANIFEST.MF;
 else
     mkdir target
     chmod 700 target
     touch ${BUILDPATH}/MANIFEST.MF;
     echo "Manifest-Version: 1.0" >> ${BUILDPATH}/MANIFEST.MF;
     echo "Main-Class: com.miro.App" >> ${BUILDPATH}/MANIFEST.MF;
-    echo "Class-Path: ../lib/commons-lang3-3.11/commons-lang3-3.11.jar" >> ${BUILDPATH}/MANIFEST.MF;
+    echo "Class-Path: ../${Commons}" >> ${BUILDPATH}/MANIFEST.MF;
 fi
 
 printf "${Red}2.Compile\n"
-javac -d ${BUILDPATH} -cp ${Commons} ${App} ${Money} ${Account} ${Currency}
+javac -d ${BUILDPATH} -cp ${Commons} ${App} ${Money} ${Account} ${Currency} ${Calculate}
 
 printf "${Red}3.Package\n"
 cd ${BUILDPATH}

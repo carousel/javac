@@ -13,10 +13,17 @@ White='\033[0;37m'
 #Light Gray   0;37     White         1;37
 SRCPATH='src/main/java/com/miro/'
 BUILDPATH='target'
+TESTPATH='src/test/'
 #Dependencies
 Commons='lib/commons-lang3-3.11/commons-lang3-3.11.jar'
-#Source classes
+#JunitJupiter='lib/junit-jupiter-engine-5.5.2.jar'
+#JunitPlatform='lib/junit-platform-engine-1.7.0.jar'
+#JunitVintage='lib/junit-vintage-engine-5.7.0.jar'
+Lib='lib/*'
+#Source classes loader
 App=${SRCPATH}'App.java'
+AppTest=${TESTPATH}'AppTest.java'
 Money=${SRCPATH}'domain/Money.java'
 Account=${SRCPATH}'domain/Account.java'
 Currency=${SRCPATH}'domain/Currency.java'
+Calculate=${SRCPATH}'domain/Calculate.java'
