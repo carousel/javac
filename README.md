@@ -3,10 +3,10 @@
 
     Important java packages:
         java.lang (core)
-        java.util
+        java.util.function
+        java.math
         java.io(stream)/nio(buffer)
         java.sql
-        java.math
         javax.persistence
 
 https://docs.oracle.com/en/java/javase/15/docs/api/index.html

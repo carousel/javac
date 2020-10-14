@@ -10,3 +10,4 @@ public class Account extends Currency {
         return this.type;
     }
 }
+

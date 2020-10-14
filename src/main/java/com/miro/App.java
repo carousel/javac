@@ -6,7 +6,7 @@ import java.math.BigDecimal;
 import java.util.function.*;
 import java.util.*;
 
-class App {
+public class App {
     String str;
     public static void main (String... args)
     {
@@ -29,6 +29,15 @@ class App {
 
         Map<String, String> names = new HashMap<>();
         names.put("Miroslav", "HashMap");
+        try{
+            if(names.get("Miroslav") == null){
+                throw new RuntimeException("Explicitly");
+            }
+        }catch(RuntimeException e){
+            System.out.println("My message: " + e.getMessage());
+        }finally{
+            System.out.println("Finally");
+        }
         System.out.println(names.get("Miroslav"));
         List<String> cities = new ArrayList();
         cities.add("Berlin");
@@ -45,7 +54,9 @@ class App {
     public boolean check(Predicate<Integer> p, Integer a){
         return p.test(a);
     }
-    @Override
+    public static void throwMe() throws Exception{
+        throw new Exception("Throwin exception");
+    }
     public boolean equals(Object o){
         return this == o;
     }
